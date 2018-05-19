@@ -13,6 +13,7 @@ app.get('/test', (req, res) => {
 
 app.get('/library', (req, res) => {
 	readFile('library.json', (file) => {
+		res.set('Access-Control-Allow-Origin', '*')
 		res.status(200).send(file);	
 	});
 });
